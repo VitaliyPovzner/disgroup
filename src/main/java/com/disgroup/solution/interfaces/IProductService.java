@@ -10,9 +10,11 @@ public interface IProductService {
 
     Optional<Product> readProduct(Long id);
 
-    void updateProduct(Product product);
+    Product updateProduct(Product product);
 
     void deleteProduct(Product product);
 
     Iterable<Product> getSorted(String fieldName,String order);
+
+    Iterable<Product> filter(String name,String contentMatches);
 }

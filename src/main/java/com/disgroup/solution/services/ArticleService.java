@@ -38,7 +38,7 @@ public class ArticleService implements IArticleService {
 
 
     public Iterable<Article> getSorted(String fieldName,String order){
-        if (!fieldName.isEmpty()){
+        if (fieldName!=null){
             return order.equals("asc")? articleRepository.findAll(Sort.by(Sort.Direction.ASC, fieldName)):
                     articleRepository.findAll(Sort.by(Sort.Direction.DESC, fieldName));
         }else{

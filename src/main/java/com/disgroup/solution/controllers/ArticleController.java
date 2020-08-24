@@ -42,7 +42,7 @@ public class ArticleController {
     }
 
     @GetMapping("/all")
-    public Iterable<Article> getSorted(@RequestParam String fieldName,@RequestParam String order){
+    public Iterable<Article> getSorted(@RequestParam(required=false) String fieldName,@RequestParam(required=false) String order){
         return articleService.getSorted(fieldName,order);
     }
 
